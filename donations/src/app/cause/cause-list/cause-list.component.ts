@@ -18,8 +18,8 @@ export class CauseListComponent implements OnInit {
       this.causeService.getCauses();
     }
   
-    causeHandler(cause: ICause) {
-      // this.selectCause.emit(cause);
+    selectCauseHandler(cause: ICause) {
+      //this.selectCause.emit(cause);
       this.causeService.selectedCause = cause;
     }
   

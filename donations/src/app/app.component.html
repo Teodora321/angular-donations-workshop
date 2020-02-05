@@ -1,6 +1,14 @@
-<div>
-    <app-header></app-header>
-    <app-cause-list></app-cause-list>
-    <app-cause></app-cause>
-    <app-footer></app-footer>
+<app-header></app-header>
+<div class=" w-100">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <app-cause-list (selectCause)="selectCauseHandler($event)">
+        </app-cause-list> 
+        <app-cause [selectedCause2]="selectedCause">
+        </app-cause>
+      </div>
+    </div>
+  </div>
 </div>
+<app-footer></app-footer>

@@ -7,11 +7,13 @@ import { CauseService } from 'src/app/services/cause.service';
   templateUrl: './cause.component.html',
   styleUrls: ['./cause.component.css']
 })
-export class CauseComponent implements OnInit {
-
+export class CauseComponent{
+  
   @ViewChild('amountInput', { static: false }) amountInput: ElementRef<HTMLInputElement>;
-
+  
   @Input() selectedCause2: ICause;
+  
+  get selectedCause() { return this.causeService.selectedCause; }
 
   get color() {
     if (this.selectedCause.collectedAmount >= this.selectedCause.neededAmount) {
@@ -26,12 +28,8 @@ export class CauseComponent implements OnInit {
     return 'red';
   }
 
-  get selectedCause() { return this.causeService.selectedCause; }
 
   constructor(private causeService: CauseService) { }
-
-  ngOnInit() {
-  }
 
   makeDonationhandler() {
     this.causeService.donate(+this.amountInput.nativeElement.value).subscribe(() => {
