@@ -1,12 +1,9 @@
 <app-header></app-header>
-<div class=" w-100">
+<div class="w-100">
   <div class="row">
     <div class="col-md-12">
       <div class="row">
-        <app-cause-list (selectCause)="selectCauseHandler($event)">
-        </app-cause-list> 
-        <app-cause [selectedCause2]="selectedCause">
-        </app-cause>
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>

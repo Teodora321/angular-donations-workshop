@@ -6,17 +6,21 @@ import {HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { CauseModule } from './cause/cause.module';
-
+import { UserModule } from './user/user.module';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     CoreModule,
     CauseModule,
-    HttpClientModule
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
