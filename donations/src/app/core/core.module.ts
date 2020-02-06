@@ -5,13 +5,15 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent, LoginComponent, RegisterComponent, NotFoundComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[FooterComponent, HeaderComponent, LoginComponent, RegisterComponent]
 })

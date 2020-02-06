@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { CreateComponent } from './create/create.component';
 import { DetailComponent } from './detail/detail.component';
+import { CauseComponent } from './cause/cause.component';
 
 const routes: Routes = [
     {
@@ -16,8 +17,8 @@ const routes: Routes = [
                 component: CreateComponent
             },
             {
-                path: 'detail',
-                component:DetailComponent
+                path: 'detail/:id',
+                component:CauseComponent
             }
         ]
     },

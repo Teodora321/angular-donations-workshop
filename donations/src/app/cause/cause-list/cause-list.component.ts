@@ -15,12 +15,12 @@ export class CauseListComponent implements OnInit {
     constructor(private causeService: CauseService) { }
   
     ngOnInit() {
-      this.causeService.getCauses();
+      this.causeService.getCauses().subscribe();
     }
   
     selectCauseHandler(cause: ICause) {
       //this.selectCause.emit(cause);
-      this.causeService.selectedCause = cause;
+      this.causeService.selectCause(cause)
     }
   
   }
