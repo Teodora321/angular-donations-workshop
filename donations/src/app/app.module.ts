@@ -8,10 +8,12 @@ import { CoreModule } from './core/core.module';
 import { CauseModule } from './cause/cause.module';
 import { UserModule } from './user/user.module';
 import { HomeComponent } from './home/home.component';
+import { UserComponent } from './services/user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    UserComponent,
     
   ],
   imports: [
