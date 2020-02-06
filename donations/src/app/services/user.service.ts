@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
   currentUser: { username: string, password: string } = null;
   
-  get isLogges() {
+  get isLogged() {
     return !!this.currentUser;
   }
   constructor() { 
@@ -15,7 +15,8 @@ export class UserService {
   }
 
   login(username: string, password: string) {
-    localStorage.setItem('current-user', JSON.stringify({ username, password }))
+    localStorage.setItem('current-user', JSON.stringify({ username, password }));
+    this.currentUser = {username,password}
   }
 
   logout() {
