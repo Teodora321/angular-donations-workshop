@@ -9,9 +9,13 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
+  get currentUser() {
+    return this.userService.currentUser;
+  }
+
   constructor(
     private userService: UserService,
-    private router:Router) { }
+    private router: Router) { }
 
   ngOnInit() {
   }
