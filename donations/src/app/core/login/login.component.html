@@ -4,17 +4,22 @@
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <h1 class="text-italic">Login</h1>
-            <form action="">
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input #emailInput type="text" id="email" class="form-control" placeholder="john.doe@domain.bg">
+                    <input #emailInput="ngModel" [ngModel]="email" name="email" required email type="text" class="form-control" placeholder="john.doe@domain.bg" pattern="(^[\w.+\-]{6,}@gmail\.com)|(^[\w.+\-]{6,}@gmail\.bg$)">
+                    <p class="error" *ngIf="emailInput.invalid && emailInput.touched">Invalid email!</p>
+                    <p class="success" *ngIf="emailInput.valid" >Validation passed!</p>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input #passwordInput type="password" id="password" class="form-control" placeholder="************">
+                    <input #passwordInput="ngModel" [ngModel]="password" minlength="6" required password type="password" name="password" class="form-control" placeholder="************">
+                    <p class="error" *ngIf="passwordInput.invalid && passwordInput.touched">Invalid password!</p>
+                    <p class="success" *ngIf="passwordInput.valid">Validation passed!</p>
                 </div>
-
-                <button type="button" (click)="login(emailInput.value, passwordInput.value)" class="btn btn-success">Login</button>
+                <button [disabled]="loginForm.invalid" type="button"
+                (click)="login(emailInput.value, passwordInput.value)" class="btn btn-success">Login</button>
+                <p class="error" *ngIf="passwordInput.invalid && passwordInput.touched || emailInput.invalid && emailInput.touched">You can't continue until you provide a valid data</p>
             </form>
             <p>Don't have account yet? <a routerLink="/user/register">Register</a>.</p>
         </div>

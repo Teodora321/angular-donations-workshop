@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css', '../../error-styles.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -15,9 +15,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  login(username: string, password: string) {
-    this.userService.login(username, password)
+  login(email: string, password: string) {
+    this.userService.login(email, password)
     this.router.navigate(['']); 
   }
+
 
 }

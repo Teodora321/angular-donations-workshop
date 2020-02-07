@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,7 +14,9 @@ import { RouterModule } from '@angular/router';
   declarations: [FooterComponent, HeaderComponent, LoginComponent, RegisterComponent, NotFoundComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[FooterComponent, HeaderComponent, LoginComponent, RegisterComponent]
 })
