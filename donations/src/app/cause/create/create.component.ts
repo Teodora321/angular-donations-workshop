@@ -20,5 +20,8 @@ export class CreateComponent implements OnInit {
 
   ngOnInit() {
   }
+  createCause() {
+    console.log(JSON.stringify(this.form.value))
+  }
 
 }

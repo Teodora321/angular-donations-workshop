@@ -6,7 +6,7 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <h1 class="text-italic">Creating my own cause</h1>
-                    <form [formGroup]="form">
+                    <form [formGroup]="form" (ngSubmit)="createCause()">
                         <div class="form-group">
                             <label for="cause">Cause</label>
                             <input type="text" formControlName="cause" id="cause" class="form-control"
@@ -42,7 +42,7 @@
                                 Cause imageUrl is invalid</p>
                             <p *ngIf="form.get('imageUrl').valid" class="success">Validation passed</p>
                         </div>
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Create</button>
                     </form>
                 </div>
                 <div class="col-md-4"></div>

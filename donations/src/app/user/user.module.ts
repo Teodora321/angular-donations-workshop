@@ -4,6 +4,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
 import { UserRoutingModule } from './user-routing.module';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
-    UserRoutingModule
+    UserRoutingModule,
+    ReactiveFormsModule
     
   ],
   exports:[ProfileComponent, UserComponent]
